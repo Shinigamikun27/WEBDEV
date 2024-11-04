@@ -1,0 +1,127 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'';
+}
+body{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-height: 15vh;
+    margin-left: 30px;
+    background-color: #024CAA;
+}
+
+.logo ul li{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    list-style-type: none;
+    
+}
+.logo ul li img{
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+.navigation{
+    position: relative;
+    width: 350px;
+    height: 70px;
+}
+.navigation ul{
+    display: flex;
+} 
+.navigation ul li{
+    position: relative;
+    list-style-type: none;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    color: #DBD3D3;
+    text-align: left;
+}
+.navigation ul li a .icon{
+    position: relative;
+    line-height: 75px;
+    transform: 0.5s;
+    font-size: 30px;
+}
+.navigation ul li.active a .icon{
+    font-size: 20px;
+    transform: translateY(-6px);
+    color: #EC8305;
+}
+.navigation ul li a .text{
+    position: absolute;
+    font-size: 12px;
+    bottom: 20px;
+    font-weight: 400;
+    transition: 0.25s;
+    text-transform: uppercase;
+    transform: scale(0);
+}
+.navigation ul li.active a .text{
+    transform: scale(1);
+    color: #EC8305;
+}
+.indicator{
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator{
+    background: #091057;
+    box-shadow: 0 15px 25px #091057;
+    transform: translateX(calc(70px * 0));
+    z-index: 1;
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+    background: #091057;
+    box-shadow: 0 15px 25px #091057;
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    background: #091057;
+    box-shadow: 0 15px 25px #091057;
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    background: #091057;
+    box-shadow: 0 10px 25px #091057;
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+    background: #091057;
+    box-shadow: 0 15px 25px #091057;
+    transform: translateX(calc(70px * 4));
+}
+footer {
+    background-color: #024CAA;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    min-width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+  }

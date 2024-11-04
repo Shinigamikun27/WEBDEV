@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Nav Bar</title>
+    <link rel="stylesheet" type="text/css" href="nav2.css">
+</head>
+<body>
+    <div class="logo">
+    <ul>
+    <li><img src="logo.jpg" alt="logo"></li>
+    </ul>
+</div>
+    <div class="navigation">
+    <ul>
+        <li class="list">
+            <a href="home.html">
+                <span class="icon">
+                    <ion-icon name="home"></ion-icon>
+                </span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list active">
+            <a href="artistt.html">
+                <span class="icon">
+                    <ion-icon name="brush"></ion-icon>
+                </span>
+                <span class="text">Artist</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="image"></ion-icon>
+                </span>
+                <span class="text">Gallery</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="game-controller"></ion-icon>
+                </span>
+                <span class="text">Game</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="alert-circle"></ion-icon>
+                </span>
+                <span class="text">About</span>
+            </a>
+        </li>
+        <div class="indicator"></div>
+    </ul>
+</div>
+<div class="title">Artists</div>
+<div class="gallery-container" id="gallery">
+</div>
+<div class="navigation-buttons">
+    <button onclick="showPrevious()">Prev</button>
+    <button onclick="showNext()">Next</button>
+</div>
+
+  <footer>
+    <p>All rights reserved @2024</p>
+  </footer>
+<script>
+   
+    const artworks = [
+        { url: 'image1.jpg', name: 'Artist 1', page: 'artwork1.html' },
+        { url: 'image2.jpg', name: 'Artist 2', page: 'artwork2.html' },
+        { url: 'image3.jpg', name: 'Artist 3', page: 'artwork3.html' },
+        { url: 'image4.jpg', name: 'Artist 4', page: 'artwork4.html' },
+        { url: 'image5.jpg', name: 'Artist 5', page: 'artwork5.html' },
+        { url: 'image6.jpg', name: 'Artist 6', page: 'artwork6.html' },
+        { url: 'image7.jpg', name: 'Artist 7', page: 'artwork7.html' },
+        { url: 'image8.jpg', name: 'Artist 8', page: 'artwork8.html' },
+        { url: 'image9.jpg', name: 'Artist 9', page: 'artwork9.html' },
+        { url: 'image10.jpg', name: 'Artist 10', page: 'artwork10.html' },
+        { url: 'image11.jpg', name: 'Artist 11', page: 'artwork11.html' },
+        { url: 'image12.jpg', name: 'Artist 12', page: 'artwork12.html' },
+        { url: 'image13.jpg', name: 'Artist 13', page: 'artwork13.html' },
+        { url: 'image14.jpg', name: 'Artist 14', page: 'artwork14.html' },
+        { url: 'image15.jpg', name: 'Artist 15', page: 'artwork15.html' },
+        { url: 'image16.jpg', name: 'Artist 16', page: 'artwork16.html' },
+        { url: 'image17.jpg', name: 'Artist 17', page: 'artwork17.html' },
+        { url: 'image18.jpg', name: 'Artist 18', page: 'artwork18.html' },
+        { url: 'image19.jpg', name: 'Artist 19', page: 'artwork19.html' },
+        { url: 'image20.jpg', name: 'Artist 20', page: 'artwork20.html' }
+    ];
+
+    let currentPage = 0;
+    const imagesPerPage = 6;
+
+    function displayImages() {
+        const gallery = document.getElementById('gallery');
+        gallery.innerHTML = '';
+
+        const start = currentPage * imagesPerPage;
+        const end = Math.min(start + imagesPerPage, artworks.length);
+
+        for (let i = start; i < end; i++) {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+           
+            const img = document.createElement('div');
+            img.className = 'gallery-image';
+            img.style.backgroundImage = 'url(${artworks[i].url})';
+            img.onclick = () => window.location.href = artworks[i].page;
+
+            
+            const name = document.createElement('div');
+            name.className = 'gallery-name';
+            name.textContent = artworks[i].name;
+
+            item.appendChild(img);
+            item.appendChild(name);
+
+            gallery.appendChild(item);
+        }
+    }
+    function showPrevious() {
+        if (currentPage > 0) {
+            currentPage--;
+            displayImages();
+        }
+    }
+    function showNext() {
+        if ((currentPage + 1) * imagesPerPage < artworks.length) {
+            currentPage++;
+            displayImages();
+        }
+    }
+    displayImages();
+</script>
+<script>
+    let list = document.querySelectorAll('.list');
+    function setActiveClass(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active')
+    }
+    list.forEach((item) =>
+    item.addEventListener('click' , setActiveClass));
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

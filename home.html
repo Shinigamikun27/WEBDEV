@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Nav Bar</title>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="logo">
+    <ul>
+    <li><img src="logo.jpg" alt="logo"></li>
+    </ul>
+</div>
+    <div class="navigation">
+    <ul>
+        <li class="list active">
+            <a href="home.html">
+                <span class="icon">
+                    <ion-icon name="home"></ion-icon>
+                </span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="artist.html">
+                <span class="icon">
+                    <ion-icon name="brush"></ion-icon>
+                </span>
+                <span class="text">Artist</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="image"></ion-icon>
+                </span>
+                <span class="text">Gallery</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="game-controller"></ion-icon>
+                </span>
+                <span class="text">Game</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="alert-circle"></ion-icon>
+                </span>
+                <span class="text">About</span>
+            </a>
+        </li>
+        
+        <div class="indicator"></div>
+    </ul>
+</div>
+<input id="searchbar" 
+               onkeyup="search_name()" 
+               type="text" name="search" 
+               placeholder="Search name..">
+               <div>
+                <ul> 
+                    <button>
+                        <ion-icon name="search-circle"></ion-icon>
+                   </button>
+                 </ul>
+               </div>
+<video autoplay muted loop id="myVideo">
+    <source src="Gallery.mp4" type="video/mp4">
+  </video>
+  <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article>
+  <footer>
+    <p>All rights reserved @2024</p>
+  </footer>
+<script>
+    let list = document.querySelectorAll('.list');
+    function setActiveClass(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active')
+    }
+    list.forEach((item) =>
+    item.addEventListener('click' , setActiveClass));
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
