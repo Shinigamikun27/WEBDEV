@@ -31,9 +31,13 @@ body{
     z-index: 1;
 }
 .navigation{
-    position: relative;
+    position: fixed;
     width: 350px;
     height: 70px;
+}
+
+.navigation.transparent {
+    background-color: transparent;
 }
 .navigation ul{
     display: flex;
