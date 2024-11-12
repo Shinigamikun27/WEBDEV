@@ -125,3 +125,128 @@ footer {
     font-family: 'Times New Roman', Times, serif;
     font-weight: 800;
   }
+:root{
+  --i-trans-fast:350ms;
+}
+
+.search{
+    border-radius: 40px;
+    height:40px;
+    background-color: #1A73E8;
+    border:3px solid #0C3B7A;
+    float:left;    
+    align-items: center;
+}
+
+.search input{
+    position: relative;
+    left:20px;
+    top:8px;
+    padding:5px;
+    outline: none;
+    width: 0px;
+    max-width: 65%;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    background: transparent;
+    color: #dfdfdf;
+    text-indent:1.5rem;
+    transition:ease-in-out all var(--i-trans-fast);
+    opacity:0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.search:hover input,
+.search input:focus{
+    width:150px;
+    opacity:1;    
+}
+
+.search input::placeholder {
+    color: #dfdfdf;
+    opacity: 1;
+}
+
+.search input:focus{
+  text-indent:0.5rem;
+}
+
+::-webkit-input-placeholder{
+    transition:ease-in-out all 250ms;
+}
+:-moz-placeholder{
+    transition:ease-in-out all 250ms;
+}
+::-moz-placeholder {
+    transition:ease-in-out all 250ms;
+}
+:-ms-input-placeholder {  
+    transition:ease-in-out all 250ms;
+}
+
+:focus::-webkit-input-placeholder{
+    color:transparent;
+}
+:focus:-moz-placeholder{
+    color:transparent;
+}
+:focus::-moz-placeholder {
+    color:transparent;
+}
+:focus:-ms-input-placeholder {  
+    color:transparent;
+}
+
+.btn{
+    height:40px;
+    width:40px;
+    border-radius:20px;
+    background-color:#0C3B7A;
+    transform: translate(0px, -25px);
+}
+
+.btn ion-icon {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    padding-top: 20%;
+    padding-left: 20%;
+}
+
+.btn i{
+    position:relative;
+    top:2px;
+    left:7px;
+    opacity:0;
+    transition:ease-in-out opacity var(--i-trans-fast);
+}
+
+.btn:hover i,
+.search input:hover + div > i{
+    opacity:1;
+}
+
+.btn i:before{
+    font-family:arial;   
+    font-size:2rem;
+    color:#FFFFFF;
+}
+
+.search input + div{
+  transition:ease-in-out all var(--i-trans-fast);
+}
+
+.search input:focus + div{
+  transform: translate(123px, -25px) rotateZ(360deg);
+}
+
+.search input:focus + div > i{
+    opacity:1;
+    left:10px;
+    top:2px;
+}
+
+.search input:focus + div > i:before{
+    color:#FFFFFF;
+    }
